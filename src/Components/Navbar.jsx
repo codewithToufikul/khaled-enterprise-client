@@ -22,14 +22,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className=" mx-auto px-2 sm:px-6 lg:px-4">
-        <div className="flex justify-between items-center h-28 ">
+        <div className="flex justify-between items-center h-20 md:h-24 lg:h-28 ">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center ">
             <NavLink to="/" onClick={closeMenus}>
               <img
                 src={logo}
                 alt="Fish Export Logo"
-                className="h-22 w-20 rounded-full object-cover mr-3 "
+                className=" h-16 lg:h-22 lg:w-20 rounded-full object-cover mr-3 "
               />
             </NavLink>
             <NavLink
@@ -37,9 +37,9 @@ const Navbar = () => {
               className="flex flex-col text-3xl text-teal-700 hover:text-teal-600 transition-colors"
               onClick={closeMenus}
             >
-              <span className=" text-[35px] font-extrabold ">Khaled Enterprise</span>
-              <span className="text-sm mt-0.5">
-                Your trusted Buying Agent in Bangladesh
+              <span className=" text-2xl lg:text-[35px] font-extrabold ">Khaled Enterprise</span>
+              <span className=" text-xs md:text-sm mt-0.5">
+                Global Fish & Food Export Solutions
               </span>
             </NavLink>
           </div>
