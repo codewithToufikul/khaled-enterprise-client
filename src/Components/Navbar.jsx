@@ -60,7 +60,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/about"
+              to="/about-us"
               className={({ isActive }) =>
                 `px-3 py-2 rounded-md text-[15px] font-semibold transition-colors ${
                   isActive
@@ -183,7 +183,7 @@ const Navbar = () => {
               Quality & Certificates
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/traceability"
               className={({ isActive }) =>
                 `px-3 py-2 rounded-md text-[15px] font-semibold transition-colors ${
@@ -194,10 +194,10 @@ const Navbar = () => {
               }
             >
               Traceability
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
-              to="/resources"
+              to="/services"
               className={({ isActive }) =>
                 `px-3 py-2 rounded-md text-[15px] font-semibold transition-colors ${
                   isActive
@@ -206,7 +206,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Resources
+              Services
             </NavLink>
 
             <NavLink
@@ -235,31 +235,6 @@ const Navbar = () => {
               Request Quote
             </NavLink>
 
-            {/* <NavLink
-              to="/news"
-              className={({ isActive }) =>
-                `px-3 py-2 rounded-md text-[15px] font-semibold transition-colors ${
-                  isActive 
-                    ? 'text-teal-700 bg-teal-50 border-b-2 border-teal-700' 
-                    : 'text-gray-700 hover:text-teal-700 hover:bg-gray-50'
-                }`
-              }
-            >
-              News
-            </NavLink> */}
-
-            <NavLink
-              to="/careers"
-              className={({ isActive }) =>
-                `px-3 py-2 rounded-md text-[15px] font-semibold transition-colors ${
-                  isActive
-                    ? "text-teal-700 bg-teal-50 border-b-2 border-teal-700"
-                    : "text-gray-700 hover:text-teal-700 hover:bg-gray-50"
-                }`
-              }
-            >
-              Careers
-            </NavLink>
 
             <NavLink
               to="/contact"
