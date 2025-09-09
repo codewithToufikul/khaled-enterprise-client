@@ -7,6 +7,9 @@ import Traceability from "../Pages/Traceability/Traceability";
 import Services from "../Pages/Services/Services";
 import MarketsLogistics from "../Pages/MarketsLogistics/MarketsLogistics";
 import RFQ from "../Pages/RFQ/RFQ";
+import AdminDashboard from "../AdminDashboard/AdminDashboard";
+import DashLogin from "../AdminDashboard/DashLogin";
+import AdminPrivetRoute from "../Hooks/AdminPrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -43,4 +46,12 @@ export const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path: "/dash-login",
+    element: <DashLogin/>
+  },
+  {
+    path: "/dashboard",
+    element: <AdminPrivetRoute><AdminDashboard/></AdminPrivetRoute>
+  }
 ]);
