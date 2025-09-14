@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 const AdminLayout = () => {
-  const { user, userLoading, logout } = useAuth();
+  const { user, userLoading } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notifications] = useState(3); // Mock notification count
 
@@ -39,28 +39,17 @@ const AdminLayout = () => {
 
   const navItems = [
     {
-      path: "/admin",
+      path: "/dashboard",
       label: "Dashboard",
       icon: LayoutDashboard,
       end: true
     },
     {
-      path: "/admin/products",
+      path: "/dashboard/products",
       label: "Products",
       icon: Package,
       badge: "24"
     },
-    {
-      path: "/admin/rfqs",
-      label: "RFQs",
-      icon: FileText,
-      badge: "5"
-    },
-    {
-      path: "/admin/settings",
-      label: "Settings",
-      icon: Settings
-    }
   ];
 
   if (userLoading) {
@@ -89,7 +78,7 @@ const AdminLayout = () => {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50 overflow-hidden">
       {/* Sidebar Overlay for Mobile */}
       {sidebarOpen && (
         <div 
@@ -100,11 +89,11 @@ const AdminLayout = () => {
 
       {/* Sidebar */}
       <div
-        className={`sidebar fixed z-40 inset-y-0 left-0 w-72 transform bg-white shadow-2xl transition-transform duration-300 ease-in-out border-r border-gray-200
+        className={`sidebar fixed top-0 left-0 z-40 h-full w-72 transform bg-white shadow-2xl transition-transform duration-300 ease-in-out border-r border-gray-200 flex flex-col
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:shadow-none`}
       >
-        {/* Sidebar Header */}
-        <div className="h-16 flex items-center justify-between px-6 bg-gradient-to-r from-teal-600 to-cyan-500 text-white border-b border-teal-700">
+        {/* Sidebar Header - Fixed */}
+        <div className="flex-shrink-0 h-16 flex items-center justify-between px-6 bg-gradient-to-r from-teal-600 to-cyan-500 text-white border-b border-teal-700">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
               <Shield className="w-5 h-5" />
@@ -124,8 +113,8 @@ const AdminLayout = () => {
           </button>
         </div>
 
-        {/* User Profile Section */}
-        <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-teal-50 to-cyan-50">
+        {/* User Profile Section - Fixed */}
+        <div className="flex-shrink-0 p-6 border-b border-gray-200 bg-gradient-to-r from-teal-50 to-cyan-50">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
               {user?.email?.charAt(0).toUpperCase() || 'A'}
@@ -137,7 +126,7 @@ const AdminLayout = () => {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation - Scrollable */}
         <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
           {navItems.map((item) => (
             <NavLink
@@ -177,23 +166,12 @@ const AdminLayout = () => {
             </NavLink>
           ))}
         </nav>
-
-        {/* Logout Section */}
-        <div className="p-4 border-t border-gray-200">
-          <button
-            onClick={logout}
-            className="w-full flex items-center justify-center space-x-2 px-4 py-3 text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            <LogOut className="w-5 h-5" />
-            <span className="font-medium">Sign Out</span>
-          </button>
-        </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col md:ml-0">
-        {/* Top Navigation Bar */}
-        <header className="h-16 bg-white shadow-sm border-b border-gray-200 flex items-center justify-between px-4 md:px-6 sticky top-0 z-20">
+      <div className="flex-1 flex flex-col min-w-0 md:ml-0">
+        {/* Top Navigation Bar - Fixed */}
+        <header className="flex-shrink-0 h-16 bg-white shadow-sm border-b border-gray-200 flex items-center justify-between px-4 md:px-6 z-20">
           {/* Mobile Menu Button */}
           <button
             className="menu-button md:hidden p-2 text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
@@ -235,15 +213,15 @@ const AdminLayout = () => {
           </div>
         </header>
 
-        {/* Page Content */}
-        <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-auto">
+        {/* Page Content - Scrollable */}
+        <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto">
           <div className="max-w-7xl mx-auto">
             <Outlet />
           </div>
         </main>
 
-        {/* Footer */}
-        <footer className="bg-white border-t border-gray-200 px-4 md:px-6 py-4">
+        {/* Footer - Fixed */}
+        <footer className="flex-shrink-0 bg-white border-t border-gray-200 px-4 md:px-6 py-4">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-600">
             <p>© 2025 Khaled Enterprise. All rights reserved.</p>
             <div className="flex items-center space-x-4 mt-2 md:mt-0">

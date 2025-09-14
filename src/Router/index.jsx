@@ -10,6 +10,9 @@ import RFQ from "../Pages/RFQ/RFQ";
 import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import DashLogin from "../AdminDashboard/DashLogin";
 import AdminPrivetRoute from "../Hooks/AdminPrivetRoute";
+import DashboardHome from "../AdminDashboard/DashboardHome";
+import AdminProducts from "../AdminDashboard/AdminProducts";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +26,10 @@ export const router = createBrowserRouter([
         {
           path: '/about-us',
           element: <About/>
+        },
+        {
+          path: "/contact",
+          element: <ContactUs/>
         },
         {
           path: '/quality-certificates',
@@ -52,6 +59,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <AdminPrivetRoute><AdminDashboard/></AdminPrivetRoute>
+    element: <AdminPrivetRoute><AdminDashboard/></AdminPrivetRoute>,
+    children:[
+      {
+        index: true,
+        element: <AdminPrivetRoute><DashboardHome/></AdminPrivetRoute>
+      },
+      {
+        path: "/dashboard/products",
+        element: <AdminPrivetRoute><AdminProducts/></AdminPrivetRoute>
+      }
+    ]
   }
 ]);

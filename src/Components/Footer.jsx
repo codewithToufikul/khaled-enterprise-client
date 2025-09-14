@@ -5,19 +5,11 @@ import logo from "../assets/logo.jpeg";
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', path: '/about' },
-    { name: 'Products', path: '/products' },
-    { name: 'Certificates', path: '/quality-certificates' },
-    { name: 'Traceability', path: '/traceability' },
-    { name: 'RFQ', path: '/rfq' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Our Service', path: '/services' },
     { name: 'Contact', path: '/contact' }
   ];
 
-  const certifications = [
-    { name: 'Halal', icon: '☪️', bgColor: 'bg-green-700' },
-    { name: 'HACCP', icon: '🛡️', bgColor: 'bg-blue-700' },
-    { name: 'ISO', icon: '🏆', bgColor: 'bg-purple-700' }
-  ];
 
   const socialLinks = [
     { 
@@ -88,21 +80,6 @@ const Footer = () => {
                 Your trusted partner in premium seafood export, delivering quality products from Bangladesh to global markets with complete traceability and certification.
               </p>
               
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-teal-400">15+</div>
-                  <div className="text-xs text-gray-500">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-cyan-400">50+</div>
-                  <div className="text-xs text-gray-500">Countries Served</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-emerald-400">500+</div>
-                  <div className="text-xs text-gray-500">Happy Clients</div>
-                </div>
-              </div>
             </div>
 
             {/* Quick Links Section */}
@@ -111,7 +88,7 @@ const Footer = () => {
                 Quick Links
               </h3>
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 {quickLinks.map((link, index) => (
                   <Link
                     key={index}
@@ -151,8 +128,8 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-teal-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-gray-300">House #123, Road #456</p>
-                    <p className="text-sm text-gray-300">Gulshan-2, Dhaka-1212</p>
+                    <p className="text-sm text-gray-300">55/A, Purana Paltan (Siddique Mansion)</p>
+                    <p className="text-sm text-gray-300">5th Floor, Dhaka-1000</p>
                     <p className="text-sm text-gray-300">Bangladesh</p>
                   </div>
                 </div>
@@ -160,10 +137,10 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-teal-400 flex-shrink-0" />
                   <a 
-                    href="tel:+8801712345678" 
+                    href="tel:+8801609291789" 
                     className="text-sm text-gray-300 hover:text-teal-400 transition-colors duration-300"
                   >
-                    +880-1712-345678
+                    +8801609291789
                   </a>
                 </div>
                 
@@ -173,7 +150,7 @@ const Footer = () => {
                     href="mailto:info@khaledenterprise.com" 
                     className="text-sm text-gray-300 hover:text-teal-400 transition-colors duration-300"
                   >
-                    info@khaledenterprise.com
+                    nagive83@gmail.com
                   </a>
                 </div>
               </div>
@@ -181,7 +158,7 @@ const Footer = () => {
               {/* WhatsApp Quick Contact */}
               <div className="mt-6">
                 <a
-                  href="https://wa.me/8801712345678"
+                  href="https://wa.me/8801609291789"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -190,72 +167,10 @@ const Footer = () => {
                   <span className="font-medium">WhatsApp Us</span>
                 </a>
               </div>
-
-              {/* Business Hours */}
-              <div className="mt-6 p-4 bg-slate-900 rounded-xl border border-gray-800">
-                <h4 className="text-sm font-semibold text-white mb-2">Business Hours</h4>
-                <div className="space-y-1 text-xs text-gray-400">
-                  <div className="flex justify-between">
-                    <span>Sunday - Thursday:</span>
-                    <span>9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Friday:</span>
-                    <span>9:00 AM - 1:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span>Closed</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Certifications Row */}
-        <div className="border-t border-gray-800 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-4 text-center md:text-left">
-                Our Certifications
-              </h3>
-              <div className="flex items-center justify-center md:justify-start space-x-4">
-                {certifications.map((cert, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg ${cert.bgColor} bg-opacity-20 border border-gray-700 hover:bg-opacity-30 transition-all duration-300`}
-                  >
-                    <span className="text-lg">{cert.icon}</span>
-                    <span className="text-xs font-medium text-white">{cert.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex items-center space-x-4">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-cyan-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-sm">24/7</span>
-                </div>
-                <span className="text-xs text-gray-400">Support</span>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-sm">✓</span>
-                </div>
-                <span className="text-xs text-gray-400">Verified</span>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-sm">🚚</span>
-                </div>
-                <span className="text-xs text-gray-400">Fast Ship</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 py-6">

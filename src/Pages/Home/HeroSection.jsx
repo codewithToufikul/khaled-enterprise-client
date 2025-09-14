@@ -6,20 +6,20 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      title: "Premium Quality Fish & Seafood",
+      title: "Premium Quality Fish & Seafoods",
       subtitle: "Directly from Ocean to Your Table",
       description: "We export the finest selection of fresh and frozen fish, shrimp, and seafood products worldwide with guaranteed quality and traceability.",
       image: "https://i.ibb.co.com/5gtqxRwC/engin-akyurt-rbz-J-fpv9v-M-unsplash.jpg",
       stats: { countries: "50+", products: "200+", experience: "15+" }
     },
-    {
-      id: 2,
-      title: "Sustainable Fishing Practices",
-      subtitle: "Committed to Ocean Conservation",
-      description: "Our responsible sourcing ensures premium seafood while protecting marine ecosystems for future generations through certified sustainable practices.",
-      image: "https://i.ibb.co.com/7JncxrsL/clay-leconey-o-B-0-YIVj7c0-unsplash.jpg",
-      stats: { certified: "100%", carbon: "30%", waste: "90%" }
-    },
+{
+    id: 4,
+    title: "Premium Garments Export",
+    subtitle: "Quality Apparel for Global Markets",
+    description: "We deliver world-class ready-made garments including knitwear, woven wear, and apparel essentials with unmatched quality and timely shipments.",
+    image: "https://i.ibb.co.com/xtfGb49y/equalstock-6p-HDH2kz00-A-unsplash-1-1.jpg", // এখানে garments সম্পর্কিত কোনো image দিন
+    stats: { factories: "20+", products: "500+", clients: "100+" }
+  },
     {
       id: 3,
       title: "Global Supply Chain Excellence",
@@ -72,7 +72,7 @@ const HeroSection = () => {
               {/* Badge */}
               <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-teal-100">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 sm:mr-3 animate-pulse"></span>
-                <span className="text-xs sm:text-sm font-medium text-teal-700">Trusted by 500+ Global Partners</span>
+                <span className="text-xs sm:text-sm font-medium text-teal-700">Trusted Global Partners</span>
               </div>
 
               {/* Main Title */}
@@ -93,49 +93,6 @@ const HeroSection = () => {
                   {slides[currentSlide].description}
                 </p>
               </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 py-4 sm:py-6">
-              {Object.entries(slides[currentSlide].stats).map(([key, value]) => (
-                <div key={key} className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-teal-700">{value}</div>
-                  <div className="text-xs sm:text-sm text-gray-600 capitalize mt-1">
-                    {key === 'countries' && 'Countries'}
-                    {key === 'products' && 'Products'}
-                    {key === 'experience' && 'Years Exp.'}
-                    {key === 'certified' && 'Certified'}
-                    {key === 'carbon' && 'Less Carbon'}
-                    {key === 'waste' && 'Less Waste'}
-                    {key === 'delivery' && 'Delivery'}
-                    {key === 'temperature' && 'Storage'}
-                    {key === 'tracking' && 'Tracking'}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button 
-                onClick={() => window.location.href = '/rfq'}
-                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 overflow-hidden text-sm sm:text-base"
-              >
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
-                <span className="relative flex items-center justify-center">
-                  📋 Request RFQ
-                  <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </button>
-
-              <button 
-                onClick={() => window.location.href = '/products'}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 font-semibold rounded-lg sm:rounded-xl shadow-lg border-2 border-teal-100 hover:border-teal-300 hover:bg-teal-50 transform hover:-translate-y-0.5 transition-all duration-300 text-sm sm:text-base"
-              >
-                🐟 View Products
-              </button>
             </div>
 
             {/* Features */}
@@ -170,22 +127,8 @@ const HeroSection = () => {
                     <div className="w-2 h-2 sm:w-3 sm:h-3 bg-emerald-400 rounded-full animate-pulse"></div>
                     <span className="text-xs sm:text-sm font-semibold text-gray-800">Premium Quality</span>
                   </div>
-                  <div className="text-xs text-gray-600 mt-1 hidden sm:block">HACCP Certified</div>
                 </div>
 
-                {/* Bottom Info Card */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 text-sm sm:text-base">Fresh Daily Catch</h3>
-                      <p className="text-xs sm:text-sm text-gray-600">Temperature: -2°C to 2°C</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-base sm:text-lg font-bold text-teal-600">24/7</div>
-                      <div className="text-xs text-gray-600">Monitoring</div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Decorative Elements */}
